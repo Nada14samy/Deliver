@@ -1,0 +1,665 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Varela Round", sans-serif;
+}
+:root{
+    --black-color: #000;
+    --light-color: #fff;
+    --primary-color: #7E429E;
+}
+body{
+    position: relative;
+    overflow-x: hidden;
+}
+/* start navbar */
+nav{
+    width: 100%;
+    height: fit-content;
+    background: url(./image/blue_bg.png);
+    padding-top: 10px;
+    overflow: hidden;
+}
+nav .container{
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+nav .container .nav-brand{
+    display: flex;
+    align-items: center;
+}
+nav .container .nav-brand .logo{
+    width: 12%;
+    height: fit-content;
+    padding: 5px 0px;
+}
+nav .container .nav-brand .logo img{
+    width: 100%;
+}
+nav .container .nav-brand ul{
+    display: flex;
+}
+nav .container .nav-brand ul li{
+    margin: 0px 15px;
+}
+nav .container .nav-brand ul li a{
+    color: var(--black-color);
+    font-size: 17px;
+    transition: 0.1s ease 0s;
+}
+nav .container .nav-brand ul li .active{
+    padding: 3px 0px;
+    border-bottom: 2px solid var(--primary-color);
+}
+nav .container button{
+    background-color: var(--light-color);
+    border: none;
+    padding: 5px 25px;
+    border-radius: 20px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.5s ease 0s;
+}
+nav .container button:hover{
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+/* bar media query */
+nav .container .checkbtn{
+    display: none;
+    font-size: clamp(25px , 5vw , 35px);
+    color: var(--praimary-color);
+    cursor: pointer;
+}
+nav .container .checkbtn:checked ~ ul{
+    left: 0%;
+}
+nav .container #check{
+    display: none;
+}
+/* bar media query */
+@media only screen and (max-width: 1100px) {
+    nav .container{
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+    }
+    nav .container .nav-brand .logo{
+        width: 150px;
+    }
+    nav .container .checkbtn{
+        display: block;
+    }
+    nav .container .nav-brand ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: #7E429E;
+        z-index: 999;
+        top: 100px;
+        left: 0px;
+        text-align: center;
+        display: none;
+        padding-top: 30px;
+    }
+    nav .container .nav-brand ul li{
+        display: block;
+        margin: 20px 0px;
+        height: 10vh;
+    }
+    nav .container .nav-brand ul li a{
+        font-size: 20px;
+        color: var(--light-color);
+    }
+    nav .container .nav-brand ul li a:hover{
+        color: var(--black-color);
+    }
+    nav .container #check:checked ~ .nav-navbar {
+       display: block;
+    }
+}
+@media only screen and (max-width: 700px) {
+    nav .container .nav-brand .logo{
+        width: 40%;
+    }
+}
+/* end navbar */
+/* start header */
+header{
+    background: url(./image/blue_bg.png);
+    width: 100%;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+header .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    overflow: hidden;
+}
+header .container .image{
+    background: url(./image/landing_bg.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 52%;
+    height: 100%;
+    z-index: 2;
+}
+header .container .image .img-mask{
+    width: 38%;
+    transform: translate(65% , 10%);
+} 
+header .container .image .img-clouds{
+    transform: translate(22% , -10%);
+    width: 62%;
+}
+header .container .text{
+    margin-left: 50px;
+    padding-left: 50px;
+    margin-bottom: 45px;
+}
+header .container .text h1{
+    font-size: clamp(25px , 4vw , 50px);
+    line-height: 40px;
+    margin-bottom: 20px;
+}
+header .container .text h1 span{
+    color: var(--primary-color);
+}
+header .container .text p{
+    font-size: clamp(16px , 4vw , 17px);
+}
+.waves{
+    position: absolute;
+    width: 85%;
+    top: 23%;
+    left: -10%;
+}
+.waves img{
+    width: 100%;
+    transform: rotate(-5deg);
+}
+@media screen and (max-width:1100px) {
+    header .container{
+        padding-top: 40px;
+        flex-wrap: wrap;
+
+    }
+    header .container .image{
+        width: 90%;
+        transform: translate(8% , 0px);
+    }
+    .waves{
+      display: none;
+    }
+    header .container .text p{
+        padding-right: 20px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    header .container .text{
+        margin-left: 0px;
+        padding-left: 0px;
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+/* end header */
+/* start section second */
+.second{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+.second .container{
+    width: 65%;
+    height: 100vh;
+    margin-left: 60px;
+    background: url(./image/second_section_.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.second .container .card-item{
+    height: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 50px;
+    position: relative;
+    top: 100px;
+    left: -180px;
+}
+.second .container .card-item-2{
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -60px;
+    left: -40px;
+}
+.second .container .card-item-3{
+    width: 100%;
+    height: 40vh;
+    display: flex;
+}
+.second .container .card-item-3 .card-3{
+    width: 50%;
+    position: relative;
+    left: 12%;
+    top: -10%;
+}
+.second .container .card-item-3 .kudzoka{
+    width: 50%;
+    background: url(./image/why_kudzoka_bg.png);
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: var(--light-color);
+    position: relative;
+    left: -20%;
+}
+.second .kudzoka p{
+    font-size: clamp(15px , 4vw , 20px);
+    margin: 0 auto;
+    padding-right: 60px;
+}
+.second .kudzoka h3{
+    font-size: clamp(20px , 4vw , 36px);
+    font-weight: 100;
+    text-transform: uppercase;
+    margin: 0 auto;
+}
+.second .container .card-1{
+    margin-right: 40px;
+}
+.second .container .card {
+    width: 45%;
+ text-align: center;
+    margin-top: 20px;
+    padding-right: 30px;
+}
+.second .container .card img{
+    width: 48%;
+}
+.second .container .card h3{
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.second .container .card  p{
+    line-height: 25px;
+    font-size: 17px;
+}
+@media screen and (min-width:700px) and (max-width: 1100px) {
+    .second .container{
+        width: 90%;
+        height: fit-content;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background: none;
+    }
+    .second .container .card-item{
+        width: 100%;
+        position: static;
+    }
+    .second .container .card-item-2{
+        width: 100%;
+        position: static;
+    }
+    .second .container .card-item-3{
+        width: 80%;
+        position: static;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: end;
+        height: 100vh;
+    }
+    .second .container .card-item-3 .kudzoka{
+        position: static;
+        width: 46%;
+        background-size: 100%;
+        margin: 0 auto;
+        height: 100%;
+    }
+}
+@media screen and (max-width:699px) {
+    .second .container{
+        width: 100%;
+        height: fit-content;
+        background: none;
+        margin-left: 0;
+    }
+    .second .container .card-item{
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+        position: static;
+    }
+    .second .container .card {
+        width: 90%;
+        text-align: center;
+        margin-top: 0px;
+        padding-right: 0px;
+        margin: 0 auto;
+    }
+    .second .container .card-item-2{
+        height: 60vh;
+        display: flex;
+        justify-content: center;
+        position: static;
+    }
+    .second .container .card-item-3{
+        position: static;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        height: 100vh;
+    }
+    .second .container .card-item-3 .card-3{
+        width: 90%;
+        position: static;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    .second .container .card-item-3 .kudzoka{
+        position: static;
+        width: 70%;
+        background-size: 90%;
+        margin: 0 auto;
+        margin-top: 20px;
+        height: 100%;
+    }
+}
+/* end section second */
+/* start section support */
+.support{
+    width: 100%;
+    position: relative;
+    top: 200px;
+}
+.support .slider{
+    width: 75%;
+    height: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.support .slider .slideer{
+    width: 24%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+}
+.support .slider .slide-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 48%;
+    height: fit-content;
+    text-align: center;
+}
+.support .slider .slide-item img{
+    width: 100%;
+    
+}
+.support .slider .slideer img{
+    width: 90%;
+    height: 80%;
+}
+.entites{
+    transform: translate(0px , 80px);
+}
+.entites span{
+    color: #202020;
+    font-size: 32px;
+    transition: 0.5s ease-in-out 0s;
+    cursor: pointer;
+}
+.entites span:hover{
+    color: var(--primary-color);
+}
+.support .slider .text-content{
+    width: 60%;
+    margin: 0 auto;
+}
+.support .slider .text-content h1 {
+ font-size: 22px;
+ margin-bottom: 20px;
+}
+
+.support .slider .text-content p {
+    font-size: 17px;
+    padding: 0px 20px;
+    line-height: 25px;
+}
+@media screen and (min-width: 700px) and (max-width: 1100px) {
+    .support .slider{
+        width: 90%;
+    }
+    .support .slider .slide-item{
+        width: 35%;
+    }
+    .support .slider .slideer{
+        width: 20%;
+    }
+    .support .slider .text-content{
+        width: 100%;
+        margin-top: 30px;
+    }
+}
+@media screen and (max-width:699px) {
+    .support{
+        position: relative;
+        top: 50px;
+    }
+    .support .slider{
+        width: 80%;
+    }
+    .support .slider .slide-item{
+        width: 80%;
+    }
+    .support .slider .slideer{
+        display: none;
+    }
+    .support .slider .text-content{
+        width: 100%;
+        margin-top: 30px;
+    }
+}
+/* end section support */
+/* start section footer */
+footer{
+    width: 100%;
+    background: url(./image/Group\ 1131.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 1550px;
+    height: 89vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 100px;
+    overflow: hidden;/
+}
+footer .container{
+    width: 80%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    position: relative;
+    top: 75px;    
+}
+footer .container .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+footer .container .text .app-links {
+    display: flex;
+    margin: 20px 0px;
+}
+footer .container  .image-deliver{
+    width: 59%;
+}
+footer .container  .image-deliver .img{
+    width: 100%;
+}
+footer .container .text .app-links .link{
+    display: flex;
+    background-color: var(--light-color);
+    margin: 5px;
+    padding: 10px 5px;
+    align-items: center;
+    border-radius: 15px;
+    color: var(--black-color);
+    cursor: pointer;
+    transition: 0.5s ease-in-out 0s;
+}
+footer .container .text .app-links .link:hover{
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+footer .container .text .app-links .link a {
+    margin: 0px 3px;
+    padding: 3px 0px;
+    display: flex;
+    justify-content: center;
+}
+footer .container .text .app-links .link a img{
+    width: 90%;
+}
+footer .container .text .app-links .link .text-link{
+    display: flex;
+    flex-direction: column;
+}
+footer .container .text .app-links .link .text-link span{
+    font-size: 10px;
+}
+footer .container .text .app-links .link .text-link  h6{
+    font-size: 14px;
+}
+footer .container .text .icon ul {
+    display: flex;
+}
+footer .container .text .icon ul li{
+    margin: 0px 10px;
+}
+footer .container .text .icon ul li img{
+    width: 80%;
+    transition: 0.5s ease-in-out 0s;
+    cursor: pointer;
+}
+footer .container .text .icon ul li img:hover{
+    transform: scale(1.2);
+}
+footer .container .text nav{
+    background: none;
+}
+footer .container .text nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+footer .container .text nav ul li a{
+    color: var(--light-color);
+    font-size: clamp(13px , 2vw , 18px);
+    margin-right: 25px;
+    transition: 0.5s ease-in-out 0s;
+}
+footer .container .text nav ul li a:hover{
+    color: var(--primary-color);
+}
+@media screen and (min-width: 700px) and (max-width:1100px) {
+    footer{
+        height: 85vh;
+        overflow: hidden;
+    }
+    footer .container{
+        width: 90%;   
+        height: 50vh;
+        position: relative;
+        top: 125px;
+    }
+    footer .container .text .icon ul li img{
+        width: 60%;
+    }
+    footer .container  .image-deliver{
+        width: 470px;
+        margin-top: 30px;
+    }
+    footer .container  .image-deliver img{
+        width: 0%;
+    }
+}
+@media screen and (max-width:699px) {
+    footer{
+        height: 90vh;
+        overflow: hidden;
+    }
+    footer .container{
+        width: 90%;
+        margin-top: 50px;
+        padding-top: 50px;
+        position: relative;
+    }
+    footer .container  .image-deliver{
+        display: none;
+    }
+    footer .container  .image-deliver img{
+        display: none;
+    }
+    footer .container .text {
+        width: 100%;
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 5px;
+        z-index: 2;
+    }
+    footer .container .text .app-links {
+        margin: 20px auto;
+    }
+    footer .container .text .icon{
+        margin: 0 auto;
+    }
+    footer .container .text nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    footer .container .text nav ul{
+        margin-bottom: 0px;
+    }
+    footer .container .text nav ul li{
+        padding-bottom: 10px;
+    }
+    footer .container .text nav ul li a{
+        font-size: 15px;
+        
+    }
+}
+/* end section footer */
