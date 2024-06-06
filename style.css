@@ -527,10 +527,11 @@ footer .container  .image-deliver .img{
     width: 100%;
 }
 footer .container .text .app-links .link{
+    width: 130px;
     display: flex;
     background-color: var(--light-color);
     margin: 5px;
-    padding: 10px 5px;
+    padding: 10px 10px;
     align-items: center;
     border-radius: 15px;
     color: var(--black-color);
